@@ -1,17 +1,21 @@
+.layout {
+  display: flex;
+  justify-content: center;
+  background-color: #232323;
+}
+
 .container {
   margin: 90px 60px 87px 65px;
-  border: 1px solid grey;
   border-radius: 30px;
   width: 1315px;
-  height: 937px;
   display: grid;
-  /* grid-template-columns: 30% 30% 30% 10%; */
   grid-template-rows: auto;
   grid-template-areas: 
     "headline headline headline headline"
-    "filters filters . removeFiltersButton"
-    "cards cards cards cards";
-    background-color: black;
+    "filters filters filters removeFiltersButton"
+    "cards cards cards cards"
+    'showMore showMore showMore showMore';
+    background-color: #303030;
     color: #fff;
 }
 
@@ -24,32 +28,110 @@
 
 .filters {
   grid-area: filters;
-  margin: 0px 78px 40px 57px;
+  margin: 24px 78px 40px 57px;
   display: flex;
   gap: 16px 8px;
   flex-wrap: wrap;
 } 
 
-.filterItem {
+.filterItemNotCheked {
   height: 18px;
   border: 1px solid #fff;
   height: 40px;
-  
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  /* background-color: inherit; */
+  /* color: #fff */
+}
+
+.filterItemCheked {
+  height: 18px;
+  border: 1px solid #fff;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #303030
 }
 
 .removeFiltersButton {
   grid-area: removeFiltersButton;
   margin: 24px 58px 95px 64px;
-  width: 82px;
+  width: 115px;
   height: 83px;
-  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.removeFiltersButtonElementsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.removeFiltersButtonElementBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.removeFiltersButtonLeftElement {
+width: 16px;
+height: 11px;
+left: 1341px;
+top: 262px;
+margin: 2px;
+
+border: 2px solid #ABABAB;
+border-bottom-right-radius: 50%;
+border-top-right-radius: 50%;
+transform: matrix(-1, 0, 0, -1, 0, 0);
+}
+
+.removeFiltersButtonCenterElement {
+  width: 16px;
+  height: 11px;
+  left: 1341px;
+  top: 262px;
+  margin: 2px;
+  border: 2px solid #ABABAB;
+}
+
+.removeFiltersButtonRightElement {
+  width: 16px;
+  height: 11px;
+  left: 1341px;
+  top: 262px;
+  margin: 2px;
+  border: 2px solid #ABABAB;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.removeFiltersButtonTriangle {
+  -webkit-text-stroke: 1px #A5DEDB;
+  color: transparent;
+  font-size: 8px;
+  transform: rotate(180deg);
+  margin: 4px;
+}
+
+.removeFiltersButtonText {
+height: 25px;
+text-transform: uppercase;
+
 }
 
 .cards {
   grid-area: cards;
-  margin: 0px 60px 58px 55px;
+  margin: 0px 60px 0px 55px;
   display: flex;
-  gap: 69px 59px;
+  gap: 35px 59px;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -57,5 +139,40 @@
 .cardBody {
   width: 248px;
   height: 204px;
-  background-color: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #E5E5E5;
+  color: black;
+}
+
+.cardDate {
+  text-align: end;
+}
+
+.cardTextLocation {
+  color: grey;
+}
+
+.cardTextLinkToModal {
+  color: #2B8580;
+  cursor: pointer;
+}
+
+.showMore {
+  grid-area: showMore;
+  text-align: center;
+  margin: 42px 0px 58px 0px;
+  
+}
+
+.showMoreButton {
+  width: 239px;
+  height: 70px;
+  background-color: #3B3B3B;
+  color: #A5DEDB;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
 }
